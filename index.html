@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jocuri de artifici - Artifici evenimente</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand" data-page="home" style="cursor: pointer">
+          <div class="brand-icon" data-page="home">🎆</div>
+          <span class="brand-text" data-page="home">Jocuri de artifici</span>
+        </div>
+        <div class="nav-menu" id="nav-menu">
+          <a href="#" class="nav-link" data-page="home">Acasă</a>
+          <a href="#" class="nav-link" data-page="products">Produse</a>
+          <a href="#" class="nav-link" data-page="about">Despre noi</a>
+          <a href="#" class="nav-link" data-page="contact">Contact</a>
+          <a href="#" class="nav-link cart-link" data-page="cart">
+            <i class="fas fa-shopping-cart" data-page="cart"></i>
+            <span class="cart-count" id="cart-count" data-page="cart">0</span>
+          </a>
+        </div>
+        <div class="nav-toggle" id="nav-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+    <main id="main-content">
+      <div id="home-page" class="page active">
+        <section class="hero">
+          <div class="hero-content">
+            <h1 class="hero-title">Artifici evenimente</h1>
+            <p class="hero-description">
+              Descoperă gama completă de artificii și petarde premium pentru
+              evenimente speciale. Transformi fiecare moment într-un spectacol
+              memorabil!
+            </p>
+            <div class="hero-buttons">
+              <button class="btn btn-primary" data-page="products">
+                Explorează Produsele
+                <i class="fas fa-arrow-right"></i>
+              </button>
+              <button class="btn btn-outline" data-page="about">
+                Află mai multe
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+          <div class="container">
+            <div class="section-header">
+              <h2>Ce spun clienții noștri</h2>
+              <p>Feedback autentic de la cei care au ales Jocuri de artifici</p>
+            </div>
+            <div class="testimonials-grid">
+              <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Servicii excelente și produse de calitate superioară!"</p>
+                <span class="author">— Alexandru M.</span>
+              </div>
+              <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Livrare rapidă și ambalare perfectă. Recomand!"</p>
+                <span class="author">— Maria P.</span>
+              </div>
+              <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Cel mai bun magazin de artificii din România!"</p>
+                <span class="author">— Ionut D.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Products Page -->
+      <div id="products-page" class="page">
+        <div class="container">
+          <div class="page-header">
+            <h1>Produsele noastre</h1>
+            <p>Descoperă colecția completă de artificii și petarde</p>
+          </div>
+          <div class="products-grid" id="products-container">
+            <!-- Produsele din Google Sheets vor fi afișate aici -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Cart Page -->
+      <div id="cart-page" class="page">
+        <div class="container">
+          <div class="page-header">
+            <h1>Coșul de cumpărături</h1>
+            <p>Verifică produsele selectate și finalizează comanda</p>
+          </div>
+          <div id="cart-content">
+            <!-- Cart content will be loaded here by JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Checkout Page -->
+<div id="checkout-page" class="page">
+  <div class="container">
+    <div class="page-header">
+      <h1>Finalizează comanda</h1>
+      <p>Completează datele pentru livrare</p>
+    </div>
+    <form action="https://formspree.io/f/manjjkga" method="POST" id="order-form">
+      <label for="nume">Nume:</label>
+      <input type="text" id="nume" name="nume" required />
+
+      <label for="prenume">Prenume:</label>
+      <input type="text" id="prenume" name="prenume" required />
+
+      <label for="telefon">Telefon:</label>
+<input type="tel" id="telefon" name="telefon" pattern="^(\+4)?07\d{8}$" required placeholder="Ex: 07xxxxxxxx" />
+
+      <label for="judet">Județ:</label>
+<select name="judet" id="judet" required>
+  <option value="">Selectează județul</option>
+  <option value="Alba">Alba</option>
+  <option value="Arad">Arad</option>
+  <option value="Argeș">Argeș</option>
+  <option value="Bacău">Bacău</option>
+  <option value="Bihor">Bihor</option>
+  <option value="Bistrița-Năsăud">Bistrița-Năsăud</option>
+  <option value="Botoșani">Botoșani</option>
+  <option value="Brașov">Brașov</option>
+  <option value="Brăila">Brăila</option>
+  <option value="București">București</option>
+  <option value="Buzău">Buzău</option>
+  <option value="Caraș-Severin">Caraș-Severin</option>
+  <option value="Călărași">Călărași</option>
+  <option value="Cluj">Cluj</option>
+  <option value="Constanța">Constanța</option>
+  <option value="Covasna">Covasna</option>
+  <option value="Dâmbovița">Dâmbovița</option>
+  <option value="Dolj">Dolj</option>
+  <option value="Galați">Galați</option>
+  <option value="Giurgiu">Giurgiu</option>
+  <option value="Gorj">Gorj</option>
+  <option value="Harghita">Harghita</option>
+  <option value="Hunedoara">Hunedoara</option>
+  <option value="Ialomița">Ialomița</option>
+  <option value="Iași">Iași</option>
+  <option value="Ilfov">Ilfov</option>
+  <option value="Maramureș">Maramureș</option>
+  <option value="Mehedinți">Mehedinți</option>
+  <option value="Mureș">Mureș</option>
+  <option value="Neamț">Neamț</option>
+  <option value="Olt">Olt</option>
+  <option value="Prahova">Prahova</option>
+  <option value="Satu Mare">Satu Mare</option>
+  <option value="Sălaj">Sălaj</option>
+  <option value="Sibiu">Sibiu</option>
+  <option value="Suceava">Suceava</option>
+  <option value="Teleorman">Teleorman</option>
+  <option value="Timiș">Timiș</option>
+  <option value="Tulcea">Tulcea</option>
+  <option value="Vaslui">Vaslui</option>
+  <option value="Vâlcea">Vâlcea</option>
+  <option value="Vrancea">Vrancea</option>
+</select>
+
+      <label for="oras">Oraș:</label>
+      <input type="text" id="oras" name="oras" required />
+
+      <label for="adresa">Adresă:</label>
+      <textarea id="adresa" name="adresa" rows="0" style="overflow: hidden; resize: none;" required></textarea>
+      <input type="hidden" name="produse" id="produseInput" />
+
+      <button type="submit" class="btn btn-primary">Trimite comanda</button>
+    </form>
+  </div>
+</div>
+
+      <!-- About Page -->
+      <div id="about-page" class="page">
+        <div class="container">
+          <div class="page-header">
+            <h1>Despre Jocuri de artifici</h1>
+            <p>Povestea noastră și valorile pe care le susținem</p>
+          </div>
+          <div class="about-content">
+            <div class="about-section">
+              <h2>Cine suntem</h2>
+              <p>
+                Jocuri de artifici este liderul pieței românești de produse
+                pirotehnice, cu peste 15 ani de experiență în domeniu. Ne
+                mândrim cu cea mai variată colecție de artificii și petarde din
+                România.
+              </p>
+            </div>
+            <div class="about-section">
+              <h2>Misiunea noastră</h2>
+              <p>
+                Să aducem bucurie și spectacol în viața oamenilor prin produse
+                pirotehnice de cea mai înaltă calitate, respectând în același
+                timp toate normele de siguranță.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Page -->
+      <div id="contact-page" class="page">
+        <div class="container">
+          <div class="page-header">
+            <h1>Contact</h1>
+            <p>Suntem aici să te ajutăm cu orice întrebare</p>
+          </div>
+          <div class="contact-content">
+            <div class="contact-info">
+              <div class="info-card">
+                <h3>📍 Adresa</h3>
+                <p>Pașcani<br />Iași, România</p>
+              </div>
+              <div class="info-card">
+                <h3>📞 Telefon</h3>
+                <p>+40 745 881 057</p>
+              </div>
+              <div class="info-card">
+                <h3>✉️ Email</h3>
+                <p>Stefanelmoneaga09@gmail.com</p>
+              </div>
+            </div>
+            <div class="important-info">
+              <h3>🚨 Informații importante</h3>
+              <div class="info-item">
+                <h4>Vânzări produse pirotehnice</h4>
+                <p>
+                  Vânzarea se face doar persoanelor cu vârsta peste 18 ani,
+                  conform legislației în vigoare.
+                </p>
+              </div>
+              <div class="info-item">
+                <h4>Consultanță gratuită</h4>
+                <p>
+                  Oferim consultanță gratuită pentru alegerea produselor
+                  potrivite pentru evenimente.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GDPR Page -->
+      <div id="gdpr-page" class="page">
+        <div class="container">
+          <div class="page-header">
+            <h1>Politica de Confidențialitate (GDPR)</h1>
+          </div>
+          <div class="legal-content">
+            <section>
+              <h2>1. Introducere</h2>
+              <p>
+                Jocuri de artifici respectă dreptul la confidențialitate și
+                protejează datele personale ale utilizatorilor conform
+                Regulamentului General privind Protecția Datelor (GDPR).
+              </p>
+            </section>
+            <section>
+              <h2>2. Date colectate</h2>
+              <p>Colectăm următoarele categorii de date personale:</p>
+              <ul>
+                <li>Date de identificare (nume, prenume)</li>
+                <li>Date de contact (email, telefon, adresă)</li>
+                <li>Date de plată (pentru procesarea comenzilor)</li>
+              </ul>
+            </section>
+            <section>
+              <h2>3. Drepturile tale</h2>
+              <p>În conformitate cu GDPR, ai următoarele drepturi:</p>
+              <ul>
+                <li>Dreptul la informare</li>
+                <li>Dreptul de acces la date</li>
+                <li>Dreptul la rectificare</li>
+                <li>Dreptul la ștergerea datelor</li>
+                <li>Dreptul la portabilitatea datelor</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terms Page -->
+      <div id="terms-page" class="page">
+        <div class="container">
+          <div class="page-header">
+            <h1>Termeni și Condiții</h1>
+          </div>
+          <div class="legal-content">
+            <section>
+              <h2>1. Dispoziții generale</h2>
+              <p>
+                Prin utilizarea site-ului Jocuri de artifici, acceptați acești
+                termeni și condiții în totalitate.
+              </p>
+            </section>
+            <section>
+              <h2>2. Condiții de vânzare</h2>
+              <p>
+                Produsele pirotehnice se vând exclusiv persoanelor cu vârsta de
+                minimum 18 ani.
+              </p>
+            </section>
+            <section>
+              <h2>3. Livrare și retur</h2>
+              <p>
+                Livrarea se face în 3-5 zile lucrătoare. Produsele pirotehnice
+                nu pot fi returnate din motive de siguranță.
+              </p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-brand">
+              <div class="brand-icon">🎆</div>
+              <span class="brand-text">Jocuri de artifici</span>
+            </div>
+            <p>
+              Soluția ta de încredere pentru cele mai spectaculoase artificii și
+              petarde dedicate evenimentelor speciale. Calitate premium și
+              siguranță garantată la fiecare spectacol.
+            </p>
+            <div class="social-links">
+              <a href="https://instagram.com"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Navigare</h3>
+            <ul>
+              <li><a href="#" data-page="home">Acasă</a></li>
+              <li><a href="#" data-page="products">Produse</a></li>
+              <li><a href="#" data-page="about">Despre noi</a></li>
+              <li><a href="#" data-page="contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Legal</h3>
+            <ul>
+              <li><a href="#" data-page="terms">Termeni și condiții</a></li>
+              <li><a href="#" data-page="gdpr">GDPR</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Jocuri de artifici. Toate drepturile rezervate.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
